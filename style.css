@@ -1,0 +1,155 @@
+:root {
+  --blue: #0a8cff;
+  --indigo: #4f46e5;
+  --purple: #b84dff;
+  --pink: #e84dff;
+  --text: #2b2b3a;
+  --muted: #8a8fa3;
+  --card: #ffffff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #e84dff 0%, #a64cf0 50%, #5a4be8 100%);
+  color: var(--text);
+}
+
+/* Card */
+.card {
+  display: flex;
+  width: 100%;
+  max-width: 920px;
+  min-height: 520px;
+  background: var(--card);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(40, 10, 100, .35);
+}
+
+/* Left welcome panel */
+.welcome {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(160deg, #0aa0ff 0%, #4f6cf5 45%, #b455f0 100%);
+}
+.welcome h1 { font-size: 2rem; font-weight: 500; position: relative; z-index: 2; }
+.welcome p  { font-size: .7rem; letter-spacing: .2em; margin-top: 10px; opacity: .8; position: relative; z-index: 2; }
+.welcome .site {
+  position: absolute; bottom: 22px; left: 0; right: 0;
+  font-size: .8rem; letter-spacing: .2em; color: var(--text); z-index: 2;
+}
+
+/* Decorative shapes */
+.blob, .circle { position: absolute; }
+.blob.one {
+  width: 130%; height: 60%; bottom: -15%; left: -15%;
+  background: linear-gradient(90deg, #c25cf5, #0a8cff);
+  border-radius: 50% 50% 0 0 / 70% 70% 0 0;
+  opacity: .8;
+}
+.blob.two {
+  width: 120%; height: 38%; bottom: -12%; left: -10%;
+  background: #f7f9fc;
+  border-radius: 60% 40% 0 0 / 100% 100% 0 0;
+  z-index: 1;
+}
+.blob.three {
+  width: 90%; height: 45%; top: 18%; left: -10%;
+  background: rgba(180, 120, 255, .35);
+  border-radius: 0 60% 60% 0;
+}
+.circle { border-radius: 50%; }
+.circle.c1 { width: 62px; height: 62px; top: 17%; left: 28%;
+  background: linear-gradient(135deg, #12c6e8, #3b8bf0); }
+.circle.c2 { width: 84px; height: 84px; bottom: 22%; left: 22%;
+  background: linear-gradient(135deg, #2f6df0, #5b3fe0); z-index: 2; }
+.circle.c3 { width: 36px; height: 36px; bottom: 25%; right: 8%;
+  background: linear-gradient(135deg, #c25cf5, #12a4f5); z-index: 2; }
+
+/* Right form panel */
+.form-side {
+  flex: 1;
+  padding: 56px 40px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.greeting { font-size: .95rem; font-weight: 300; }
+.greeting strong { display: block; color: var(--pink); font-weight: 500; }
+.form-title { text-align: center; margin: 28px 0 20px; font-size: .9rem; }
+.form-title span { color: var(--purple); font-weight: 600; }
+
+.field { margin-bottom: 22px; }
+.field input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px 0;
+  font: inherit;
+  font-size: .85rem;
+  color: var(--text);
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, var(--purple), var(--blue)) 1;
+}
+.field input::placeholder { color: var(--muted); letter-spacing: .08em; }
+.field input:focus { border-image: linear-gradient(90deg, var(--pink), var(--indigo)) 1; }
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .72rem;
+  margin-bottom: 20px;
+}
+.options label { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.options a { color: var(--text); text-decoration: none; }
+.options a:hover, .create:hover { text-decoration: underline; }
+
+.btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  letter-spacing: .25em;
+  background: linear-gradient(90deg, #0a8cff, #b455f0);
+  transition: transform .15s, box-shadow .15s;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(100, 60, 230, .35); }
+.btn:focus-visible, input:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; }
+
+.create {
+  display: block;
+  text-align: center;
+  margin-top: 18px;
+  font-size: .72rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* Tablet / mobile: stack panels */
+@media (max-width: 720px) {
+  .card { flex-direction: column; min-height: 0; }
+  .welcome { min-height: 220px; flex: none; }
+  .welcome h1 { font-size: 1.6rem; }
+  .form-side { padding: 32px 24px 28px; }
+}
+@media (max-width: 400px) {
+  body { padding: 12px; }
+  .options { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
