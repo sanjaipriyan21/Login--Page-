@@ -42,9 +42,6 @@ Login-Page-Design/
 4. Run the file using Live Server or your browser.
 5. Explore the Login Page.
 
-📸 Screenshots
-
-Add your login page screenshots here.
 
 👨‍💻 Author
 
