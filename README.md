@@ -14,8 +14,8 @@ This project is a simple, creative, and responsive Login Page designed using HTM
 
 🛠️ Technologies Used
 
-- HTML5 – To create the structure of the login page.
-- CSS3 – To style the page and make it responsive.
+- HTML – To create the structure of the login page.
+- CSS – To style the page and make it responsive.
 
 ✨ Features
 
