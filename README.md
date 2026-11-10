@@ -28,7 +28,7 @@ This project is a simple, creative, and responsive Login Page designed using HTM
 
 📂 Project Structure
 
-Login-Page-Design/
+Login-Page-Design/                                                                                                                                                                                           
 │
 ├── index.html
 ├── style.css
